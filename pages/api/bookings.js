@@ -96,6 +96,191 @@ Yours sincerely,
 The Sailaway Team
 `;
 
+    const bookingRows = bookings
+      .map((b, i) => `
+        <tr>
+          <td style="padding: 12px 15px; border-bottom: 1px solid #e8e5df;">
+            <strong>Boat ${i + 1}: ${escapeHtml(b.boat)}</strong>
+            <br>
+            <span style="color: #777777; font-size: 13px;">
+              ${escapeHtml(b.category)} ·
+              ${escapeHtml(b.isMultiDay ? `${b.days} days` : b.duration)}
+            </span>
+          </td>
+        </tr>
+      `)
+      .join("");
+
+    const customerEmailHtml = `
+<!DOCTYPE html>
+<html>
+<body style="margin: 0; padding: 0; background-color: #f3f1ec; font-family: Arial, Helvetica, sans-serif; color: #333333;">
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #f3f1ec; padding: 30px 12px;">
+    <tr>
+      <td align="center">
+
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width: 600px; width: 100%; background-color: #ffffff;">
+
+          <!-- HEADER -->
+          <tr>
+            <td align="center" style="background-color: #102d40; padding: 38px 20px 32px;">
+              <div style="font-family: Georgia, serif; font-size: 36px; letter-spacing: 5px; color: #ffffff;">
+                SAILAWAY
+              </div>
+              <div style="font-size: 13px; letter-spacing: 5px; color: #d8c9a5; margin-top: 8px;">
+                ST ANTHONY
+              </div>
+            </td>
+          </tr>
+
+          <!-- MAIN CONTENT -->
+          <tr>
+            <td style="padding: 38px 35px 25px;">
+
+              <h1 style="font-family: Georgia, serif; font-size: 25px; font-weight: normal; color: #173b50; margin: 0 0 22px;">
+                Thank you, ${escapeHtml(name)}
+              </h1>
+
+              <p style="font-size: 15px; line-height: 1.7; margin: 0 0 18px;">
+                Thank you for your request to hire a
+                <strong>${bookings.map((b) => escapeHtml(b.boat)).join(", ")}</strong>
+                for ${bookings.map((b) => escapeHtml(b.isMultiDay ? `${b.days} days` : b.duration)).join(", ")}.
+              </p>
+
+              <p style="font-size: 15px; line-height: 1.7; margin: 0 0 28px;">
+                We've received your booking request and will check the tides and availability before giving you a call to confirm the final details.
+              </p>
+
+              <h2 style="font-family: Georgia, serif; font-size: 20px; font-weight: normal; color: #173b50; margin: 0 0 15px;">
+                Your booking details
+              </h2>
+
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #faf9f6; border: 1px solid #e8e5df;">
+                <tr>
+                  <td style="padding: 12px 15px; border-bottom: 1px solid #e8e5df;">
+                    <span style="color: #777777; font-size: 12px; text-transform: uppercase;">Date</span>
+                    <br>
+                    <strong>${escapeHtml(date)}</strong>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 15px; border-bottom: 1px solid #e8e5df;">
+                    <span style="color: #777777; font-size: 12px; text-transform: uppercase;">Start time</span>
+                    <br>
+                    <strong>${escapeHtml(time)}</strong>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 15px; border-bottom: 1px solid #e8e5df;">
+                    <span style="color: #777777; font-size: 12px; text-transform: uppercase;">Meeting location</span>
+                    <br>
+                    <strong>${escapeHtml(location)}</strong>
+                  </td>
+                </tr>
+                ${bookingRows}
+                <tr>
+                  <td style="padding: 16px 15px; background-color: #f0eee8;">
+                    <span style="font-size: 12px; color: #777777; text-transform: uppercase;">Total hire cost</span>
+                    <br>
+                    <strong style="font-size: 22px; color: #173b50;">£${escapeHtml(total)}</strong>
+                  </td>
+                </tr>
+              </table>
+
+              <h2 style="font-family: Georgia, serif; font-size: 20px; font-weight: normal; color: #173b50; margin: 30px 0 15px;">
+                Payment information
+              </h2>
+
+              <p style="font-size: 14px; line-height: 1.7; margin: 0 0 18px;">
+                Once your booking is confirmed, we'll take a deposit of one third of the total cost, with the remaining balance due a week before your hire commences.
+              </p>
+
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #faf9f6; border: 1px solid #e8e5df;">
+                <tr>
+                  <td style="padding: 14px 15px; border-bottom: 1px solid #e8e5df;">
+                    <span style="font-size: 13px; color: #777777;">Deposit payable on confirmation</span>
+                    <br>
+                    <strong style="font-size: 20px; color: #173b50;">£${deposit.toFixed(2)}</strong>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 14px 15px;">
+                    <span style="font-size: 13px; color: #777777;">Remaining balance</span>
+                    <br>
+                    <strong style="font-size: 20px; color: #173b50;">£${remainder.toFixed(2)}</strong>
+                    <br>
+                    <span style="font-size: 12px; color: #777777;">Due one week before your hire commences</span>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="font-size: 13px; line-height: 1.7; color: #666666; margin: 18px 0 28px;">
+                If your hire is due to commence within the next fortnight, we'll instead take payment in full over the phone.
+              </p>
+
+              <!-- RIVER MAP -->
+              <h2 style="font-family: Georgia, serif; font-size: 20px; font-weight: normal; color: #173b50; margin: 0 0 12px;">
+                The Helford River
+              </h2>
+
+              <img
+                src="${mapUrl}"
+                alt="Map of the Helford River"
+                width="530"
+                style="display: block; width: 100%; max-width: 530px; height: auto; border: 0; margin: 0 auto 28px;"
+              >
+
+              <p style="font-size: 14px; line-height: 1.7; margin: 0 0 18px;">
+                In the meantime, take a moment to have a look at our
+                <a href="https://sailawaystanthony.co.uk/boat-hire-faq" style="color: #173b50;">FAQs</a>.
+              </p>
+
+              <p style="font-size: 14px; line-height: 1.7; margin: 0;">
+                If you'd like to get in touch, please give us a call on
+                <strong>01326 231 357</strong>.
+              </p>
+
+              <p style="font-size: 15px; line-height: 1.7; margin: 28px 0 0;">
+                We look forward to getting you afloat!
+                <br><br>
+                Yours sincerely,<br>
+                <strong>The Sailaway Team</strong>
+              </p>
+
+            </td>
+          </tr>
+
+          <!-- FOOTER -->
+          <tr>
+            <td align="center" style="background-color: #102d40; padding: 26px 20px;">
+              <div style="font-size: 12px; letter-spacing: 2px; color: #d8c9a5;">
+                SAILAWAY ST ANTHONY
+              </div>
+              <div style="font-size: 12px; color: #ffffff; margin-top: 10px;">
+                HELFORD RIVER · CORNWALL
+              </div>
+              <div style="font-size: 13px; color: #ffffff; margin-top: 16px;">
+                01326 231 357
+              </div>
+              <div style="font-size: 12px; margin-top: 8px;">
+                <a href="https://sailawaystanthony.co.uk/" style="color: #d8c9a5; text-decoration: none;">
+                  sailawaystanthony.co.uk
+                </a>
+              </div>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
+`;
+    
     const businessEmail = await resend.emails.send({
       from: "Sailaway Bookings <onboarding@resend.dev>",
       to: "david@stanthony.co.uk",
