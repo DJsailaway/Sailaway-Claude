@@ -183,7 +183,7 @@ The Sailaway Team
                   <td style="padding: 16px 15px; background-color: #f0eee8;">
                     <span style="font-size: 12px; color: #777777; text-transform: uppercase;">Total hire cost</span>
                     <br>
-                    <strong style="font-size: 22px; color: #173b50;">£${escapeHtml(total)}</strong>
+                    <strong style="font-size: 22px; color: #173b50;">£${Number(total).toFixed(2)}</strong>
                   </td>
                 </tr>
               </table>
