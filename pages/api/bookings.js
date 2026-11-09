@@ -51,31 +51,34 @@ Duration: ${b.isMultiDay ? `${b.days} days` : b.duration}
       })
       .join("\n");
 
-          const emailContent = `
+const { deposit, remainder } = calculateDeposit(total);
+
+const emailContent = `
 NEW BOOKING REQUEST
 
-========================
-
 CUSTOMER DETAILS
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
+${name}
+${phone}
+${email}
 
-DATE: ${date}
-START TIME: ${time}
-
-LOCATION
-${location}
 
 BOOKING DETAILS
-${bookingDetails}
+${bookings.map((b) => `${b.boat} (${b.category})`).join(", ")}
+Start time: ${time}
+Date: ${date}
+Duration: ${bookings.map((b) => b.isMultiDay ? `${b.days} days` : b.duration).join(", ")}
+Starting place: ${location}
 
-TOTAL PRICE: £${total}
 
-========================
+PAYMENT
+Total: £${Number(total).toFixed(2)}
+Deposit: £${deposit.toFixed(2)}
+Remaining balance: £${remainder.toFixed(2)}
+
+
+CUSTOMER NOTES
+${notes?.trim() || "No additional notes supplied."}
 `;
-
-        const { deposit, remainder } = calculateDeposit(total);
 
         const customerEmailContent = `
 Dear ${name},
