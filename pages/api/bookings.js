@@ -144,7 +144,15 @@ The Sailaway Team
               <p style="font-size: 15px; line-height: 1.7; margin: 0 0 18px;">
                 Thank you for your request to hire a
                 <strong>${bookings.map((b) => escapeHtml(b.boat)).join(", ")}</strong>
-                for ${bookings.map((b) => escapeHtml(b.isMultiDay ? `${b.days} days` : b.duration)).join(", ")}.
+                for ${bookings.map((b) => {
+                  const duration = b.isMultiDay ? `${b.days} days` : b.duration;
+                  const formattedDuration =
+                  /^(half|full) day$/i.test(duration)
+                  ? duration.replace(/^half day$/i, "half a day").replace(/^full day$/i, "a full day")
+                : duration;
+
+                  return escapeHtml(formattedDuration);
+              }).join(", ")}.
               </p>
 
               <p style="font-size: 15px; line-height: 1.7; margin: 0 0 28px;">
