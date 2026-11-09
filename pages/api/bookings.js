@@ -143,7 +143,7 @@ The Sailaway Team
             <td style="padding: 38px 35px 25px;">
 
               <h1 style="font-family: Georgia, serif; font-size: 25px; font-weight: normal; color: #173b50; margin: 0 0 22px;">
-                Thank you, ${escapeHtml(name)}
+                Dear ${escapeHtml(name)}
               </h1>
 
               <p style="font-size: 15px; line-height: 1.7; margin: 0 0 18px;">
