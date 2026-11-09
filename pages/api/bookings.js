@@ -218,11 +218,6 @@ The Sailaway Team
                 If your hire is due to commence within the next fortnight, we'll instead take payment in full over the phone.
               </p>
 
-              <!-- RIVER MAP -->
-              <h2 style="font-family: Georgia, serif; font-size: 20px; font-weight: normal; color: #173b50; margin: 0 0 12px;">
-                The Helford River
-              </h2>
-
               <img
                 src="${mapUrl}"
                 alt="Map of the Helford River"
