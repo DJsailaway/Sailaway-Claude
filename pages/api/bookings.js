@@ -219,7 +219,7 @@ The Sailaway Team
               </p>
 
               <img
-                src="${mapUrl}"
+                src="cid:helford-river-map"
                 alt="Map of the Helford River"
                 width="530"
                 style="display: block; width: 100%; max-width: 530px; height: auto; border: 0; margin: 0 auto 28px;"
