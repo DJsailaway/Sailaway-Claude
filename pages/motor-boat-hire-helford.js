@@ -71,11 +71,11 @@ export default function MotorBoatHire() {
         }}
       >
         <p style={{ fontSize: "1.1rem", marginBottom: "20px" }}>
-          Explore the beautiful Helford River at your own pace with our self-drive motor boat hire.
+          Explore the beautiful Helford River with Cornwall's largest self-drive boat hire fleet.
         </p>
 
         <p style={{ marginBottom: "30px" }}>
-          Based in St Anthony, our boats are perfect for families, couples, and groups.
+          Based in St Anthony, our boats are perfect for families, couples, and groups. Our fleet caters to total novices and experieced boatmen alike. We offer a varied fleet of motor and sailboats, and are able to offer delivery to all points along the Helford River. Visitors can take a short hop up the river for an hour, or reserve a boat for a week or two to immerse themselves in this wonderful Cornish tradition. Of course, our boats are supplied with fuel, with all the requisite safety equipment and are fully licensed and insured. With well over a century of experience handling boats on the Helford, we aim to take any hassle out of your time afloat, and will show you how to use the boat and give you a few tips on where to go before you set off on your own adventure.
         </p>
 
         <h2>Our Motor Boats</h2>
