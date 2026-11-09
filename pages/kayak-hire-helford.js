@@ -32,6 +32,19 @@ export default function KayakHire() {
 />
 
       {/* CONTENT */}
+
+      <div
+        id="page-content"
+        style={{
+          fontFamily: "sans-serif",
+          padding: "40px 20px",
+          maxWidth: "900px",
+          margin: "0 auto",
+        }}
+      >
+        <p>
+          The easiest way to get afloat and enjoy the tranquility of the Helford River. We offer several options for visitors: Anarth Rowing Dinghies are made locally and are lovely rowing boats for up to four people to paddle around the creeks and beaches. Double and single kayaks are very straightforward to use, and allow novices the freedom to explore or anchor at a secluded beach for some relaxation. Stand-Up Paddleboards are great fun but be prepared to get wet!
+        </p>
       <div
         style={{
           fontFamily: "sans-serif",
@@ -85,7 +98,8 @@ export default function KayakHire() {
               Check availability
             </button>
           </a>
-        </div>
+               </div>
+      </div>
       </div>
     </>
   );
