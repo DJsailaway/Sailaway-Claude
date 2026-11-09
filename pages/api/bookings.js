@@ -291,7 +291,14 @@ The Sailaway Team
       to: email,
       subject: "We've received your boat hire request",
       text: customerEmailContent,
-      html: customerEmailHtml
+      html: customerEmailHtml,
+      attachments: [
+        {
+          path: mapUrl,
+          filename: "helford-river-map.png",
+          contentId: "helford-river-map"
+        }
+      ]
     });
 
     if (customerEmail.error) {
