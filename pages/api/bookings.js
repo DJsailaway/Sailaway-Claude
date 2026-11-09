@@ -104,12 +104,7 @@ The Sailaway Team
       .map((b, i) => `
         <tr>
           <td style="padding: 12px 15px; border-bottom: 1px solid #e8e5df;">
-            <strong>Boat ${i + 1}: ${escapeHtml(b.boat)}</strong>
-            <br>
-            <span style="color: #777777; font-size: 13px;">
-              ${escapeHtml(b.category)} ·
-              ${escapeHtml(b.isMultiDay ? `${b.days} days` : b.duration)}
-            </span>
+            <strong>${bookings.length > 1 ? `Boat ${i + 1}: ` : ""}${escapeHtml(b.boat)}</strong>
           </td>
         </tr>
       `)
