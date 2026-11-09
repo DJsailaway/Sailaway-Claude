@@ -30,6 +30,7 @@ export default async function handler(req, res) {
       name,
       email,
       phone,
+      notes,
       bookings,
       date,
       time,
