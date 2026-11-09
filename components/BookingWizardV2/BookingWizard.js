@@ -239,6 +239,7 @@ const handleSubmitRequest = async () => {
         name: customer.name,
         email: customer.email,
         phone: customer.phone,
+        notes: customer.notes,
         bookings: [
           {
             boat: selectedBoat?.title || "",
