@@ -300,7 +300,8 @@ The Sailaway Team
       from: "Sailaway Bookings <onboarding@resend.dev>",
       to: email,
       subject: "We've received your boat hire request",
-      text: customerEmailContent
+      text: customerEmailContent,
+      html: customerEmailHtml
     });
 
     if (customerEmail.error) {
