@@ -77,19 +77,19 @@ export default function Location() {
         </h2>
 
         <p>
-          At the end of quiet Cornish lanes, St Anthony isn't 
-          a place that changes much. The boats on the river may
-          be more modern, but the hamlet itself has barely 
-          altered over the centuries, and the pace of life 
-          still feels reassuringly familiar.
+          Hidden in a cleft in the cliffs of Gillan Creek, St
+          Anthony is a tiny secluded hamlet set around an
+          ancient Norman church. A few cottages and converted
+          farm buildings are set along a lengthy beach, looking
+          across the sheltered waters of Gillan Creek.
         </p>
 
         <p>
-          Perhaps that's why this small hamlet has changed so
-          little. The old cottages still face the water,
-          boats still rest on their moorings with the tide,
-          and long summer evenings are accompanied by little
-          more than birdsong and the gentle clink of halyards.
+          The hamlet is on a creek on the south bank of the
+          Helford River. There are no major roads nearby, and
+          the background noise is birdsong, wavelets breaking
+          on the beach, and the old farm tractor as it pulls
+          boats to the water's edge.
         </p>
 
         <p>
@@ -100,34 +100,12 @@ export default function Location() {
           the day, there is rarely any reason to hurry.
         </p>
 
-        <hr
-          style={{
-            margin: "70px 0",
-            border: 0,
-            borderTop: "1px solid #ddd",
-          }}
-        />
-
-        <h2>A Place People Return To</h2>
-
         <p>
-          Many families who visit St Anthony first arrived as
-          children and now return with children and
-          grandchildren of their own.
-        </p>
-
-        <p>
-          There is something timeless about spending a day on
-          the Helford: drifting up quiet creeks, dropping an
-          anchor for lunch, swimming from deserted beaches and
-          discovering little corners that never appear on the
-          usual tourist maps.
-        </p>
-
-        <p>
-          Of course, everyone has a first visit.
-          The Helford has a habit of making those feel like
-          the start of a tradition.
+          Just as the place itself has barely changed over the
+          years, so our visitors have been a constant. We first
+          welcomed guests to our boats and cottages in the 1930s
+          and many of the families that visited then still return
+          regularly, several generations later.
         </p>
 
         <hr
@@ -151,8 +129,8 @@ export default function Location() {
         <h3>The Shipwrights Arms</h3>
 
         <p>
-          A waterside pub that feels perfectly suited to a
-          relaxed lunch after a morning exploring the river.
+          A waterside pub perfectly suited for a relaxed 
+          lunch after a morning exploring the river.
         </p>
 
         <h3>Hidden Beaches</h3>
@@ -169,7 +147,7 @@ export default function Location() {
 
         <p>
           Head upstream on a high tide between wooded
-          banks, nested by Kingfishers, Ibis and Swans
+          banks, nested by Kingfishers, Herons and Swans
         </p>
 
         <hr
@@ -189,8 +167,8 @@ export default function Location() {
   <h2>How to Get Here</h2>
 
   <p>
-    St Anthony sits at the very end of quiet Cornish lanes on the edge of the
-    Helford River, where the road naturally gives way to the water.
+    St Anthony sits at the end of quiet Cornish lanes on the edge of the
+    Helford River, where the road reaches the beach.
   </p>
 
   <p>
@@ -289,7 +267,7 @@ export default function Location() {
 
           <p>
             We’re always happy to chat before you book — give us a call, or
-            come and find us at the end of the lane.
+            come and find us in the boathouse on the beach.
           </p>
 
           <address style={{ fontStyle: "normal", lineHeight: 1.8, margin: "20px 0" }}>
